@@ -10,6 +10,6 @@ WORKDIR /admin
 
 EXPOSE 4000
 
-ADD ./target/admin.jar ./
+ADD ./target/admin-1.jar ./
 
 CMD java -Djava.security.egd=file:/dev/./urandom -jar admin.jar
