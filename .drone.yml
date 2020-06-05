@@ -2,7 +2,7 @@ kind: pipeline
 name: ac
 steps:
   ############################################################################################################################
-  - name: NodeBuild_Test #第二部：node编译   NeverSellSuteAC
+  - name: NodeBuild_Test #第二部：node编译   NeverSellSuteAC   1
     #    privileged: true
     image: node:10.15.3-alpine #采用node 10.15.3版本，和我们本地一致，官方镜像
     volumes: #定义yarn的本地存储，之后全部采用yarn缓存，加速编译
