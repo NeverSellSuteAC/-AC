@@ -60,25 +60,23 @@ steps:
 #      event: [ push ]
 #  -
   ############################################################################################################################
-#  - name: deployTest
-#      image: appleboy/drone-ssh
-#      pull: true
-#      settings:
-#        host: duyouli8888.com
-#        user: root
-#        key:
-#          from_secret: q1a2z3qq.
-#        script:
-#          - cd /data
-#          - mkdir app/
-#          - cd /data/app
-#          - docker rmi -f test
-#          - echo "login docker"
-#          - echo "login success, pulling..."
-#          - docker pull duyouli8888.com:5000/test
-#          - echo "image running ${DRONE_BUILD_NUMBER}"
-#          - docker run -p 8088:8088 -d test
-#          - echo "run success"
+  - name: deployTest
+      image: appleboy/drone-ssh
+      pull: true
+      settings:
+        host: duyouli8888.com
+        user: root
+        key:
+          from_secret: q1a2z3qq.
+        script:
+          - cd /data/app
+          - docker rmi -f superac/super-ac
+          - echo "login docker"
+          - echo "login success, pulling..."
+          - docker pull superac/super-ac
+          - echo "image running superac/super-ac"
+          - docker run -p 8066:8066 -d superac/super-ac
+          - echo "run success"
   ############################################################################################################################
 
 volumes: #这里是存储卷定义
