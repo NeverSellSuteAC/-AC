@@ -40,7 +40,9 @@ steps:
       password: q1a2z3qq.
       repo: superac/super-ac #镜像地址
 #      registry: http://duyouli8888.com:5000 #仓库地址
-      tags: [${DRONE_BUILD_NUMBER},latest] #tags，这里是Drone的一个变量，也可以使用其他
+      tags:
+      - ${DRONE_BUILD_NUMBER} #tags，这里是Drone的一个变量，也可以使用其他
+      - latest
     when:
       branch: TestLoop
       event: [ push ]
