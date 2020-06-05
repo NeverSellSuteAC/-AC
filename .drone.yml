@@ -40,7 +40,7 @@ steps:
       password: q1a2z3qq.
       repo: superac/super-ac #镜像地址
 #      registry: http://duyouli8888.com:5000 #仓库地址
-      tags: ${DRONE_BUILD_NUMBER} #tags，这里是Drone的一个变量，也可以使用其他
+      tags: [${DRONE_BUILD_NUMBER},latest] #tags，这里是Drone的一个变量，也可以使用其他
     when:
       branch: TestLoop
       event: [ push ]
@@ -60,26 +60,26 @@ steps:
 #      event: [ push ]
 #  -
   ############################################################################################################################
-  - name: dddtest
-    image: appleboy/drone-ssh
-    pull: true
-    settings:
-      host: duyouli8888.com
-      user: root
-      key:
-        from_secret: q1a2z3qq.
-      script:
-        - cd /data/app
-        - docker rmi -f superac/super-ac
-        - echo "login docker"
-        - echo "login success, pulling..."
-        - docker pull superac/super-ac
-        - echo "image running superac/super-ac"
-        - docker run -p 8066:8066 -d superac/super-ac
-        - echo "run success"
-    when:
-      branch: TestLoop
-      event: [ push ]
+#  - name: dddtest
+#    image: appleboy/drone-ssh
+#    pull: true
+#    settings:
+#      host: duyouli8888.com
+#      user: root
+#      key:
+#        from_secret: q1a2z3qq.
+#      script:
+#        - cd /data/app
+#        - docker rmi -f superac/super-ac
+#        - echo "login docker"
+#        - echo "login success, pulling..."
+#        - docker pull superac/super-ac
+#        - echo "image running superac/super-ac"
+#        - docker run -p 8066:8066 -d superac/super-ac
+#        - echo "run success"
+#    when:
+#      branch: TestLoop
+#      event: [ push ]
   ############################################################################################################################
 
 volumes: #这里是存储卷定义
