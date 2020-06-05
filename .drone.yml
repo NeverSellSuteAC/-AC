@@ -36,12 +36,10 @@ steps:
 #    privileged: true
     image: plugins/docker #这是Drone官方提供的Docker插件镜像，其实完全可以用官方镜像
     settings:
-#      username:   #这里的是仓库的用户名
-#        from_secret: docker_username
-#      password:
-#        from_secret: docker_password
-      repo: http://duyouli8888.com:5000/test #镜像地址
-      registry: http://duyouli8888.com:5000 #仓库地址
+      username: superac
+      password: q1a2z3qq.
+      repo: superac/super-ac #镜像地址
+#      registry: http://duyouli8888.com:5000 #仓库地址
       tags: ${DRONE_BUILD_NUMBER} #tags，这里是Drone的一个变量，也可以使用其他
     when:
       branch: TestLoop
