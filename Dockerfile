@@ -4,12 +4,12 @@ MAINTAINER somewhere0813@gmail.com
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-RUN mkdir -p /albedo-admin
+RUN mkdir -p /admin
 
-WORKDIR /albedo-admin
+WORKDIR /admin
 
 EXPOSE 4000
 
-ADD ./target/albedo-admin.jar ./
+ADD ./target/admin.jar ./
 
-CMD java -Djava.security.egd=file:/dev/./urandom -jar albedo-admin.jar
+CMD java -Djava.security.egd=file:/dev/./urandom -jar admin.jar
