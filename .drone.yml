@@ -41,7 +41,7 @@ steps:
 #      password:
 #        from_secret: docker_password
       repo: duyouli8888.com:5000/test #镜像地址
-      registry: duyouli8888.com:5000 #仓库地址
+      registry: http://duyouli8888.com:5000 #仓库地址
       tags: ${DRONE_BUILD_NUMBER} #tags，这里是Drone的一个变量，也可以使用其他
     when:
       branch: TestLoop
